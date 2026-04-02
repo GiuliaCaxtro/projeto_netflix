@@ -23,6 +23,17 @@ Além da interface, foram implementadas melhorias de usabilidade e experiência 
 
 ---
 
+## 📸 Preview
+
+Interface inspirada na Netflix com perfis interativos e design moderno.
+
+
+
+https://github.com/user-attachments/assets/72c0a66c-307a-411c-9ff5-109fb6b6fb94
+
+
+
+---
 ## 🚀 Tecnologias Utilizadas
 
 * **HTML5** → Estrutura semântica
@@ -94,11 +105,7 @@ Durante o desenvolvimento, foram praticados:
 
 ---
 
-## 📸 Preview
 
-Interface inspirada na Netflix com perfis interativos e design moderno.
-
----
 
 ## ✨ Melhorias Futuras
 
