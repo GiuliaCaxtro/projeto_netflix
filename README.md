@@ -3,10 +3,12 @@
 Projeto desenvolvido durante a **Imersão Front-End na Era da IA da Alura**, com foco em HTML, CSS e JavaScript, aplicando boas práticas de desenvolvimento e melhoria de qualidade de software com apoio de Inteligência Artificial.
 
 ---
-🔗 Acessar projeto: https://giuliacaxtro.github.io/Meus-projetos/projeto-netflix/
+🔗 Acessar projeto: https://giuliacaxtro.github.io/projeto_netflix/
 
+<p align="center">
 <img src="assets/readme/image.png" alt="Logo"/> 
 <img src="assets/readme/Screenshot_7.png" alt="Logo" width="320" height="350" />
+</p>
 
 ## 📌 Sobre o Projeto
 
