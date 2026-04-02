@@ -98,6 +98,9 @@ Durante o desenvolvimento, foram praticados:
 
 Interface inspirada na Netflix com perfis interativos e design moderno.
 
+
+
+
 ---
 
 ## ✨ Melhorias Futuras
