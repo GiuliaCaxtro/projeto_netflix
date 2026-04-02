@@ -118,7 +118,7 @@ Durante o desenvolvimento, foram praticados:
 
 ## 👩‍💻 Autora
 
-Desenvolvido por gIULIA CASTRO 💙
+Desenvolvido por GIULIA CASTRO 💙
 Durante a Imersão Front-End da Alura
 
 ---
