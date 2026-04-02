@@ -1,0 +1,210 @@
+/* Netflix style */
+:root {
+  --bg: radial-gradient(circle at 20% 20%, #282828 0%, #141414 55%, #090909 100%); /* fundo dark padrão */
+  --bg-alt: #1f1f1f; /* cor alternativa de fundo */
+  --text: #f2f2f2; /* cor principal do texto */
+  --muted: #b3b3b3; /* cor de texto secundário */
+  --border-hover: rgba(255, 255, 255, 0.85); /* borda de hover dark */
+  --radius: 12px; /* raio padrão para bordas arredondadas */
+  --cor-botao: #33373D; /* cor de fundo do botão */
+}
+
+html.light-mode, body.light-mode {
+  --bg: #ffffff; /* fundo claro principal */
+  --bg-alt: #ffffff; /* cor alternativa de fundo */
+  --text: #111111; /* texto escuro */
+  --muted: #666666; /* texto secundário */
+  --border-hover: #333333; /* borda hover mais escura */
+  --header-h1-color: #222222; /* título principal mais escuro no modo claro */
+  --figcaption-color: #222222; /* figcaption segue a mesma cor do h1 */
+  --figcaption-shadow: 0 5px 7px rgba(0,0,0,0.15); /* sombra leve para texto em modo claro */
+}
+
+
+* {
+  margin: 0; /* remove margem padrão de todos os elementos */
+  padding: 0; /* remove preenchimento padrão de todos os elementos */
+  box-sizing: border-box; /* inclui padding/border nas dimensões width/height */
+}
+
+html, body {
+  height: 100%; /* faz html e body ocuparem toda altura da janela */
+  margin: 0; /* zera margem padrão do navegador */
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* fonte base */
+  background: var(--bg); /* usa variável de tema */
+  color: var(--text); /* cor de texto global */
+}
+
+body {
+  min-height: 100vh; /* garante ao menos altura da viewport */
+  display: grid; /* usa grid para centralizar conteúdo */
+  place-items: center; /* centraliza vertical e horizontalmente */
+  padding: 3rem 2rem 2rem; /* espaçamento interno (mais em cima) */
+  background: var(--bg-alt); /* tema escuro ou claro já no modo ativo */
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--cor-botao);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-radius: var(--radius); /* bordas arredondadas */
+  padding: 0.8rem 0.9rem; /* preenchimento interno do botão */
+  border: 1px solid rgba(255, 255, 255, 0.192); /* borda leve */
+}
+
+.theme-toggle:hover {
+  background: rgb(32, 32, 32);
+}
+
+main {
+  margin: 15rem 0; /* distância vertical acima e abaixo do conteúdo principal */
+}
+
+section {
+  display: flex; /* contêiner flexível */
+  flex-direction: column; /* disposição em coluna */
+  align-items: center; /* alinha horizontalmente ao centro */
+  margin-top: auto; /* empurra seção para baixo quando necessário */
+}
+
+header h1 {
+  font-size: clamp(1.9rem, 4vw, 2.5rem); /* tamanho responsivo entre min/máx */
+  color: var(--header-h1-color, #ffffff); /* cor do título, ajustável por tema */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.45); /* sombra de texto para contraste */
+  text-align: center; /* centraliza texto */
+  margin: 1rem 0; /* separação vertical */
+}
+
+.profiles {
+  display: flex; /* layout flexível para perfis */
+  flex-wrap: wrap; /* permite quebra de linha */
+  justify-content: center; /* centraliza em largura */
+  align-items: center; /* centraliza em altura */
+  gap: 1rem; /* espaçamento entre os itens */
+  margin-top: 0.8rem; /* espaço acima da lista */
+}
+
+.profile {
+  flex: 0 0 auto; /* item com largura fixa e sem crescer */
+  width: 120px; /* largura base do perfil */
+  list-style: none; /* remove marcador de lista */
+}
+
+.profile img {
+  width: 100%;
+  max-width: 230px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.profile img:hover,
+.profile img:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.288);
+  outline: none;
+}
+
+.profile.novo_usuario {
+  border-radius: 16px;
+  padding: 0.35rem;
+}
+
+.profile.novo_usuario img {
+  object-fit: contain !important;
+  object-position: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(85, 84, 84, 0.5);
+  padding: 6px;
+  border-radius: 16px;
+}
+
+html.light-mode .profile img {
+  border: 2px solid rgba(0, 0, 0, 0.041);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.356);
+  background-color: #6d6a6a;
+}
+
+html.light-mode .profile.novo_usuario img {
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.20);
+  background-color: var(--cor-botao);
+}
+
+.profile figcaption {
+  color: var(--figcaption-color, #f8f8f8);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+}
+html.light-mode .profile figcaption {
+  color: #222222;
+  font-weight: 700;
+}
+
+.EditarPerfis {
+  margin: 4rem auto 0 auto;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 550;
+  text-align: center;
+  border-radius: var(--radius);
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.192);
+  background: var(--cor-botao);
+  color: #fff;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+.EditarPerfis:hover {
+  background: rgb(255, 255, 255);
+  color: #000;
+}
+
+html.light-mode .EditarPerfis {
+  border: 1px solid rgba(255, 255, 255, 0.192);
+  background: var(--cor-botao);
+  color: #fff;
+}
+
+html.light-mode .EditarPerfis:hover {
+  background: rgb(32, 32, 32);
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 480px), (orientation: landscape) {
+  body {
+    padding: 0rem; /* reduz padding em telas pequenas / landscape */
+  }
+  header {
+    margin-top: 1.5rem; /* distanciamento extra no topo */
+  }
+
+  main {
+    margin: 2rem 0; /* margem reduzida em mobile */
+  }
+
+  .profiles {
+    margin-top: 1rem; /* reduz espaço */
+    max-width: 100%; /* impede overflow */
+  }
+  header h1 {
+    font-size: clamp(1.4rem, 6vw, 1.85rem); /* fonte menor em telas pequenas */
+  }
+}
